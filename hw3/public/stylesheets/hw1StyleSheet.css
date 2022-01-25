@@ -1,0 +1,120 @@
+/*Phi Nguyen, HW1, 11 Jan 2022*/
+/*Known Bugs: resizing window can cause elements to move out of place*/
+
+/*background color*/
+body {
+    width: 25%;
+    margin: 0 auto;
+    padding-top:50px;
+    background-color: coral;
+}
+
+.topping_select {
+    font-family:sans-serif ;
+    background-color: white;
+}
+
+
+/*makes the image circular and gives it a border*/
+#cheesecake img {
+    margin-left: 25%;
+    border-radius: 100%;
+    border-style: solid;
+    border-color: gray;
+}
+
+/*centers all elements and changes background color*/
+.order {
+    background-color: white;
+    border-style: solid;
+    border-radius: 25px;
+    border-color: gray;
+    
+}
+
+/*changes the font of toppings and quantity labels*/
+td {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/*centers the title*/
+h1 {
+    margin-left: 1%;
+    font-family: sans-serif;
+}
+
+table {
+margin-left: 33%;    
+}
+
+
+
+/*centers special instructiosn*/
+.special_Instructions {
+    margin-left: 8%;
+}
+
+/*makes text area rounded and keeps size static*/
+textarea {
+    border-radius: 10px;
+    resize: none;
+}
+
+label {
+    font-family: sans-serif;
+}
+/*centers order button*/
+.orderButton {
+    margin-left: 37%;
+}
+
+
+
+/*position of the list*/
+.totalOrders {
+    margin-left: 25%
+}
+
+.orderSummary {
+    margin-left: 10%;
+}
+#thankYou {
+    margin-left: 1%;
+    font-family: sans-serif;
+    font-size: medium;
+}
+
+#details {
+    
+    font-family: sans-serif;
+}
+#detailNotes {
+    
+    font-family: sans-serif;
+}
+ul {
+    margin-left: 5% 
+}
+
+/*Hides the radio button*/
+input[type="radio"] {
+    appearance: none;
+}
+
+/*Changes the color of the button when it is selected*/
+input[type="radio"]:checked+label {
+    background: coral;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: gray;
+    color: white;
+}
+input[type="radio"]:hover+label {
+    background: coral;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: gray;
+    color: white;
+}
+

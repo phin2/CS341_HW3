@@ -1,0 +1,153 @@
+<!--Phi Nguyen, HW2, 25 Jan 2022-->
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+ </script>
+<!DOCTYPE html>
+<html lang = "en">
+    <link rel = "stylesheet" href = "/stylesheets/hw1StyleSheet.css">
+    <div class="order">
+        
+            <h1 id = "heading">Cheesecake Order Form</h1>
+
+            <div class = orderSummary>
+                <h2 id = "thankYou"></h2>
+                <p id = "details"></p>
+                <p id = "detailNotes"></p>
+            </div>
+        
+    
+    <div id = "cheesecake" style = "position:relative" width=100% length = 100%>
+    <img src = "https://upload.wikimedia.org/wikipedia/commons/9/9c/Mondays_at_Il_Forno_-_Cheesecake_with_strawberry_sauce.jpg" 
+    width="180px" height="180px">
+    </div>
+
+    
+        <!--Table-->
+        <table class = options>
+            <tr>
+                <td>Quantity</td>
+                <td>Topping</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="quantity_select">
+                        <!--The dropdown menu for number of cheesecakes-->
+                        <select name="quantity" id="quantity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                    </div>
+                </td>
+                <td>
+                    <!--The radio buttons for selecting toppings-->
+                    <div class="topping_select">
+                        <input type ="radio" id="plain" name="topping" value = "Plain">
+                        <label for="plain">Plain</label><br>
+                        <input type ="radio" id="cherry" name="topping" value = "Cherry">
+                        <label for="cherry">Cherry</label><br>
+                        <input type ="radio" id="chocolate" name="topping" value = "Chocolate">
+                        <label for="chocolate">Chocolate</label><br>
+                    </div>  
+                </td>
+            </tr>
+        </table>
+    
+        <!--The text area for adding special instructions-->
+        <div class="special_Instructions">
+            <script>
+                function vegan() {
+                    //checks if the order is vegan                    
+                    if($("#orderNotes").val().toLowerCase().trim() == "vegan") {
+                        alert("This product contains dairy");
+                    } else {//provides order summary and clears page
+
+                        var quantityCake = $("#quantity option:selected").text();
+                        var flavorCake = $("input[name=topping]:checked").val();
+                        var cakeNotes = $("#orderNotes").val();
+
+                        if(cakeNotes == "Enter any special instructions here") {
+                            cakeNotes = " ";
+                        }
+
+                        //clears page
+                        $(".options").remove();
+                        $("#cheesecake").remove();
+                        $("#cheesecake").remove();
+                        $("#notesLabel").remove();
+                        $("#orderNotes").remove();
+                        $(".orderButton").remove();
+
+                        
+                        //displays order summary
+                        $("#thankYou").append("Thank you! Your order has been placed");
+                        
+                        $("#details").append(flavorCake);
+                        $("#details").append(" Cheesecake x");
+                        $("#details").append(quantityCake);
+                        
+
+                        $("#detailNotes").append("Notes:\n");
+                        $("#detailNotes").append(cakeNotes);
+
+                        
+                          
+                    }
+                }
+            </script>
+            <label id = "notesLabel" for="notes">Notes:</label>
+            <br>
+            <textArea id="orderNotes" name="orderNotes" rows="4" cols="40">Enter any special instructions here</textArea>
+            <br><br>
+            <div class=orderButton>
+                <input type="submit" value="Order" onclick="vegan()">
+            </div>
+        </div>
+    
+        <!--List of past orders-->
+        <div class=totalOrders>
+        <h3>Orders for
+                <select name = select class = month id = month  >
+                    <option value="1">Jan</option>
+                    <option value="2">Feb</option>
+                    <option value="3">Mar</option>
+                    <option value="4">Apr</option>
+                    <option value="5">May</option>
+                    <option value="6">Jun</option>
+                    <option value="7">Jul</option>
+                    <option value="8">Aug</option>
+                    <option value="9">Sep</option>
+                    <option value="10">Oct</option>
+                    <option value="11">Nov</option>
+                    <option value="12">Dec</option>
+                </select>
+                
+                <script>
+                    $("#month").hover(function() {
+                        $(this).attr("size", 4); 
+                    }, function() {
+                        $(this).attr("size",1);
+                    });
+                    $("#month").click(function() {
+                       $(this).attr("size",1);
+                    });
+                </script>
+                
+        </h3>
+        <ul>
+            <li>11 Cherry</li>
+            <li>17 Chocolate</li>
+            <li>31 Plain</li>
+        </ul>
+        </div>
+        </div>
+
+       
+    
+</html>
