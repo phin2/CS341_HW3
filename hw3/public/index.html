@@ -61,46 +61,7 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
     
         <!--The text area for adding special instructions-->
         <div class="special_Instructions">
-            <script>
-                function vegan() {
-                    //checks if the order is vegan                    
-                    if($("#orderNotes").val().toLowerCase().trim() == "vegan") {
-                        alert("This product contains dairy");
-                    } else {//provides order summary and clears page
-
-                        var quantityCake = $("#quantity option:selected").text();
-                        var flavorCake = $("input[name=topping]:checked").val();
-                        var cakeNotes = $("#orderNotes").val();
-
-                        if(cakeNotes == "Enter any special instructions here") {
-                            cakeNotes = " ";
-                        }
-
-                        //clears page
-                        $(".options").remove();
-                        $("#cheesecake").remove();
-                        $("#cheesecake").remove();
-                        $("#notesLabel").remove();
-                        $("#orderNotes").remove();
-                        $(".orderButton").remove();
-
-                        
-                        //displays order summary
-                        $("#thankYou").append("Thank you! Your order has been placed");
-                        
-                        $("#details").append(flavorCake);
-                        $("#details").append(" Cheesecake x");
-                        $("#details").append(quantityCake);
-                        
-
-                        $("#detailNotes").append("Notes:\n");
-                        $("#detailNotes").append(cakeNotes);
-
-                        
-                          
-                    }
-                }
-            </script>
+            <script src = "javascripts/scripts.js"></script>
             <label id = "notesLabel" for="notes">Notes:</label>
             <br>
             <textArea id="orderNotes" name="orderNotes" rows="4" cols="40">Enter any special instructions here</textArea>
@@ -128,16 +89,7 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
                     <option value="12">Dec</option>
                 </select>
                 
-                <script>
-                    $("#month").hover(function() {
-                        $(this).attr("size", 4); 
-                    }, function() {
-                        $(this).attr("size",1);
-                    });
-                    $("#month").click(function() {
-                       $(this).attr("size",1);
-                    });
-                </script>
+                <script src = "javascripts/scripts.js"></script>
                 
         </h3>
         <ul>
